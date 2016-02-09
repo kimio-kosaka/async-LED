@@ -16,15 +16,13 @@ board.on('ready', function() {
         function(next) {
             setTimeout(function() {
                 led_0.on();
-                console.log('R done!');
-                next(null, 'one');
+                next();
             }, 2000);
         },
         function(next) {
             setTimeout(function() {
                 led_0.off();
                 led_1.on();
-                console.log('G done!');
                 next();
             }, 2000);
         },
@@ -32,15 +30,13 @@ board.on('ready', function() {
             setTimeout(function() {
                 led_1.off();
                 led_2.on();
-                console.log('B done!');
                 next();
             }, 2000);
         },    
         function(next) {
             setTimeout(function() {
                 led_2.off();
-                console.log('B done!');
-                next(null, 'three', 3, '3');
+                next();
             }, 1500);
         }     
     ], function complete(err, results) {
